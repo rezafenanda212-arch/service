@@ -93,10 +93,27 @@
     display:grid; gap:18px;
     grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
   }
-  .service-card{
-    background:rgba(255,255,255,0.03); padding:18px;border-radius:14px;border:1px solid var(--panel-border);
-    transition:transform .28s, box-shadow .28s; text-align:center;
-  }
+  
+.service-card{
+  background:var(--card-bg);
+  padding:18px;
+  border-radius:14px;
+  border:1px solid var(--card-border);
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  height:100%;
+}
+
+.service-card p{
+  flex-grow:1;
+}
+
+.service-card .btn-primary{
+  margin-top:auto;
+}
+
   .service-card:hover{ transform:translateY(-8px); box-shadow:0 12px 30px rgba(0,0,0,0.4);}
   .service-card img{width:92px; height:92px; object-fit:contain; margin-bottom:12px}
   .service-card h4{color:var(--accent); margin:6px 0}
@@ -134,6 +151,40 @@
 
   @media (max-width:880px){ .hero{flex-direction:column} .hero-right{width:100%; max-width:100%} .hero img{width:100%} .nav nav{display:none} .search{display:none} }
   @media (max-width:520px){ .hero{padding:18px} .hero-left h2{font-size:24px} .slider .slide{height:220px} }
+
+  /* Ensure grid cards all same height and images centered */
+  .grid { align-items: stretch; }
+  .grid > .service-card { /* for grid items directly */
+    height: 100%;
+  }
+  /* In case service-card wrapped in article (keep both) */
+  article.service-card { height: 100%; display: flex; flex-direction: column; justify-content: space-between; }
+
+  .service-card img{
+    width:92px;
+    height:92px;
+    object-fit:contain;
+    margin:12px auto 12px;
+    display:block;
+  }
+
+  /* Ensure title and description spacing is consistent */
+  .service-card h4{ margin:6px 0 8px; }
+  .service-card p{ margin:6px 0 10px; }
+
+  /* Make button alignment robust */
+  .service-card .btn-primary{
+    margin-top:auto;
+    align-self:center;
+    padding:10px 16px;
+    min-width:140px;
+  }
+
+  /* Give cards a consistent min-height to avoid wrapping issues */
+  @media (min-width:720px){
+    .service-card{ min-height:300px; }
+  }
+
 </style>
 </head>
 <body>
@@ -228,28 +279,28 @@
       <div class="grid" id="servicesGrid">
 
         <article class="service-card" data-anim>
-          <img alt="install" src="https://cdn-icons-png.flaticon.com/512/888/888879.png">
-          <h4>Instal Ulang Windows</h4>
+          <img alt="install" src="https://cdn-icons-png.flaticon.com/512/5815/5815667.png">
+          <h4>Instal Ulang OS</h4>
           <p>Instalasi & optimasi, driver lengkap, bebas virus.</p>
           <p><a class="btn-primary" href="https://wa.me/+6282299262564">Hubungi via WA</a></p>
         </article>
 
         <article class="service-card" data-anim>
-          <img alt="lcd" src="https://cdn-icons-png.flaticon.com/512/1995/1995574.png">
+          <img alt="lcd" src="https://cdn-icons-png.flaticon.com/512/13839/13839326.png">
           <h4>Ganti LCD Laptop</h4>
           <p>Penggantian layar, periksa konektor & kualitas panel.</p>
           <p><a class="btn-primary" href="https://wa.me/+6282299262564">Hubungi via WA</a></p>
         </article>
 
         <article class="service-card" data-anim>
-          <img alt="keyboard" src="https://cdn-icons-png.flaticon.com/512/3068/3068434.png">
+          <img alt="keyboard" src="https://cdn-icons-png.flaticon.com/512/17358/17358953.png">
           <h4>Ganti Keyboard</h4>
           <p>Keyboard rusak, tombol tidak berfungsi.</p>
           <p><a class="btn-primary" href="https://wa.me/+6282299262564">Hubungi via WA</a></p>
         </article>
 
         <article class="service-card" data-anim>
-          <img alt="battery" src="https://cdn-icons-png.flaticon.com/512/3104/3104941.png">
+          <img alt="battery" src="https://cdn-icons-png.flaticon.com/512/8772/8772524.png">
           <h4>Ganti Baterai</h4>
           <p>Baterai drop / tidak bisa charging.</p>
           <p><a class="btn-primary" href="https://wa.me/+6282299262564">Hubungi via WA</a></p>
