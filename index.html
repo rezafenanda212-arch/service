@@ -1,487 +1,519 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Service Laptop Profesional — Sumber Rezeki</title>
-  
-<!-- Favicon SR -->
-<link rel="icon" type="image/png" href="favicon.png?v=3">
-<link rel="shortcut icon" type="image/png" href="favicon.png?v=3">
-  
-<!-- SEO / Social -->
-<meta name="description" content="Jasa service laptop: instal ulang, ganti LCD, ganti keyboard, cleaning, garansi 30 hari. Hubungi via WhatsApp." />
-<meta name="keywords" content="service laptop, ganti lcd, instal ulang, ganti keyboard, service komputer" />
-<meta property="og:title" content="Service Laptop Profesional" />
-<meta property="og:description" content="Teknisi berpengalaman • Garansi 30 hari • Free diagnosa" />
-<meta property="og:image" content="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=1200" />
-<meta property="og:type" content="website" />
-
-<!-- Styles -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sumber Rezeki — Service Laptop Medan</title>
+<meta name="description" content="Service laptop Medan: instal ulang, ganti LCD, keyboard, cleaning. Garansi 30 hari. Plus galeri foto pekerjaan dan rekomendasi sparepart pilihan teknisi.">
+<meta name="theme-color" content="#102842">
+<script>try{if(localStorage.getItem("sr-theme")==="light")document.documentElement.setAttribute("data-theme","light")}catch(e){}</script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap">
 <style>
-  :root{
-    --bg:#0f2a44; --card:#0f172a; --accent:#2f9cff; --muted:#94b8d7;
-    --accent-2:#25D366; --glass: rgba(255,255,255,0.06);
-    --light-bg:#ffffff; --dark-text:#0b2236;
-    /* theme-aware tokens */
-    --text: #ffffff;
-    --panel-bg: rgba(255,255,255,0.03);
-    --panel-border: rgba(255,255,255,0.03);
-    --panel-contrast: rgba(255,255,255,0.02);
-    --card-bg: rgba(255,255,255,0.03);
-    --card-border: rgba(255,255,255,0.03);
-    --table-bg: rgba(255,255,255,0.02);
-    --table-border: rgba(255,255,255,0.04);
-    --table-header-bg: rgba(255,255,255,0.06);
-    --sticky-bg: linear-gradient(180deg, rgba(12,26,42,0.9), rgba(2,10,18,0.92));
-    --promo-backdrop: rgba(2,6,23,0.6);
-  }
-  *{box-sizing:border-box}
-  html,body{height:100%; margin:0; font-family:Inter,system-ui,Arial,sans-serif; background:var(--bg); color:var(--text); -webkit-font-smoothing:antialiased;}
-  a{color:inherit}
-
-  /* PRELOADER */
-  #preloader{
-    position:fixed; inset:0; background:linear-gradient(135deg,#041324,#08304f); display:flex;
-    align-items:center; justify-content:center; z-index:9999; flex-direction:column;
-  }
-  #preloader .dot{width:12px;height:12px;border-radius:50%;background:var(--accent); margin:6px; animation:bounce .8s infinite ease-in-out;}
-  #preloader .dot:nth-child(2){animation-delay:.12s}
-  #preloader .dot:nth-child(3){animation-delay:.24s}
-  @keyframes bounce{0%{transform:translateY(0)}50%{transform:translateY(-10px)}100%{transform:translateY(0)}}
-
-  /* NAVBAR */
-  .nav{
-    position:sticky; top:0; z-index:50; backdrop-filter: blur(6px);
-    display:flex; align-items:center; justify-content:space-between; gap:20px;
-    padding:12px 20px; background: linear-gradient(180deg, rgba(15,42,68,0.6), rgba(15,42,68,0.35));
-    border-bottom:1px solid var(--panel-border);
-  }
-  .brand{display:flex;align-items:center;gap:12px}
-  .brand .logo-circle{
-      width:44px;height:44px;border-radius:8px;
-      background:linear-gradient(135deg,var(--accent),#6ec1ff);
-      display:flex;align-items:center;justify-content:center;
-      font-weight:700;color:#fff
-  }
-  .brand h1{font-size:18px;margin:0;color:var(--accent)}
-  nav ul{list-style:none;display:flex;gap:18px;margin:0;padding:0;align-items:center}
-  nav a{color:var(--muted);text-decoration:none;font-weight:600}
-  .nav-actions{display:flex;gap:10px;align-items:center}
-  .search{background:var(--panel-bg);padding:8px 12px;border-radius:999px;border:1px solid var(--panel-border);color:var(--muted)}
-
-  /* HERO SLIDER */
-  .hero-wrap{max-width:1200px;margin:28px auto 8px; padding:0 20px;}
-  .hero{
-    display:flex; gap:30px; align-items:center; padding:28px; border-radius:16px;
-    background: linear-gradient(180deg, var(--panel-bg), var(--panel-contrast));
-    overflow:hidden;
-  }
-  .hero-left{flex:1; min-width:260px}
-  .hero-left h2{color:var(--accent); font-size:34px; margin:0 0 12px}
-  .hero-left p{color:var(--muted); margin:0 0 18px; line-height:1.5}
-  .cta-row{display:flex; gap:12px; align-items:center}
-  .btn-primary{background:var(--accent); color:#04213a; padding:12px 18px; border-radius:10px; font-weight:700; text-decoration:none}
-  .btn-ghost{border:1px solid rgba(255,255,255,0.06); padding:10px 14px; border-radius:10px; color:var(--muted); text-decoration:none}
-
-  .hero-right{width:560px; max-width:48%; position:relative}
-  .slider{width:100%; border-radius:12px; overflow:hidden; box-shadow:0 10px 30px rgba(2,6,23,0.6)}
-  .slide{display:none;width:100%;height:320px;background-size:cover;background-position:center}
-  .slide.active{display:block; animation:slideIn .8s ease;}
-  @keyframes slideIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-
-  /* SERVICES GRID */
-  .section{max-width:1200px;margin:36px auto;padding:0 20px}
-  .section h3{color:var(--accent); margin-bottom:16px}
-  .grid{
-    display:grid; gap:18px;
-    grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
-  }
-  
-.service-card{
-  background:var(--card-bg);
-  padding:18px;
-  border-radius:14px;
-  border:1px solid var(--card-border);
-  text-align:center;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  height:100%;
+:root{
+  --bg:#102842;--panel:rgba(255,255,255,.055);--ink:#e8f1fb;--mut:#9db3c9;--line:rgba(255,255,255,.1);
+  --acc:#3aa6f8;--acc2:#6cc6ff;--acc-ink:#06233f;--glow:rgba(58,166,248,.34);
+  --term:#0a1b2e;--term-ink:#8fd0ff;--sh:0 24px 48px -30px rgba(0,0,0,.6);
+  --r:36px;color-scheme:dark;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
 }
+:root[data-theme="light"]{--bg:#eef5fc;--panel:rgba(255,255,255,.8);--ink:#0f2742;--mut:#4f6a86;--line:rgba(15,39,66,.1);--acc:#0f5aa8;--acc2:#1f7bd6;--acc-ink:#fff;--glow:rgba(15,90,168,.25);--term:#0f2742;--term-ink:#8fd0ff;--sh:0 24px 48px -30px rgba(15,60,110,.35);color-scheme:light}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 90px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Space Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:60}
+body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(900px 520px at 90% -10%,var(--glow),transparent 62%),radial-gradient(700px 480px at -10% 40%,color-mix(in srgb,var(--acc2) 18%,transparent),transparent 65%),radial-gradient(600px 400px at 60% 105%,color-mix(in srgb,var(--acc) 12%,transparent),transparent 65%)}
+a{color:inherit;text-decoration:none}
+.w{max-width:1120px;margin:0 auto;padding:0 20px}
 
-.service-card p{
-  flex-grow:1;
+/* ---------- views (tab) ---------- */
+.view{display:none}
+body[data-view="home"] #home,body[data-view="sparepart"] #sparepart,body[data-view="galeri"] #galeri{display:block;animation:fade .45s both}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}}
+
+/* ---------- header kapsul ---------- */
+header{position:sticky;top:calc(env(safe-area-inset-top,0px) + 10px);z-index:50;padding:0 12px}
+.cap{max-width:1120px;margin:0 auto;height:62px;padding:0 9px 0 16px;border-radius:99px;display:flex;align-items:center;justify-content:space-between;gap:10px;background:color-mix(in srgb,var(--bg) 62%,transparent);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border:1px solid var(--line);box-shadow:var(--sh)}
+.logo{font-weight:700;font-size:18px;letter-spacing:-.3px;display:flex;align-items:center;gap:10px;flex:none}
+.logo b{background:linear-gradient(135deg,var(--acc),var(--acc2));color:var(--acc-ink);width:36px;height:36px;display:grid;place-items:center;border-radius:50%;font-size:13px;box-shadow:0 8px 20px -6px var(--glow)}
+.tabs{display:flex;padding:4px;border-radius:99px;background:color-mix(in srgb,var(--ink) 6%,transparent);flex:none}
+.tabs a{padding:8px 18px;border-radius:99px;font-weight:700;font-size:14px;color:var(--mut);transition:.25s;white-space:nowrap}
+body[data-view="home"] .tabs a[data-t="home"],body[data-view="sparepart"] .tabs a[data-t="sparepart"],body[data-view="galeri"] .tabs a[data-t="galeri"]{background:linear-gradient(135deg,var(--acc),var(--acc2));color:var(--acc-ink);box-shadow:0 8px 18px -8px var(--glow)}
+.links{display:flex;gap:2px;font-size:14px;color:var(--mut)}
+.links a{padding:8px 13px;border-radius:99px;transition:.2s}
+.links a:hover{color:var(--ink);background:var(--panel)}
+body:not([data-view="home"]) .links{display:none}
+.tgl{flex:none;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--panel);color:var(--ink);font:400 18px/1 "Space Grotesk",system-ui,sans-serif;cursor:pointer;display:grid;place-items:center;transition:.2s}
+.tgl:hover{border-color:var(--acc)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:99px;font:700 15px "Space Grotesk",system-ui,sans-serif;border:0;cursor:pointer;transition:transform .2s,box-shadow .2s;background:linear-gradient(135deg,var(--acc),var(--acc2));color:var(--acc-ink);box-shadow:0 12px 28px -10px var(--glow),inset 0 1px 0 rgba(255,255,255,.35)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 18px 34px -10px var(--glow),inset 0 1px 0 rgba(255,255,255,.35)}
+.btn.o{background:var(--panel);color:var(--ink);border:1px solid var(--line);box-shadow:none;backdrop-filter:blur(10px)}
+.btn.o:hover{border-color:var(--acc)}
+.btn.sm{padding:10px 20px;font-size:14px}
+
+/* ---------- hero ---------- */
+.hero{padding:64px 0 30px}
+.hero .w{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center}
+.tag{display:inline-flex;align-items:center;font:500 13px ui-monospace,Menlo,Consolas,monospace;color:var(--mut);border:1px solid var(--line);padding:7px 16px;border-radius:99px;background:var(--panel);backdrop-filter:blur(10px)}
+.tag i{width:8px;height:8px;border-radius:50%;background:var(--acc);margin-right:9px;box-shadow:0 0 0 4px color-mix(in srgb,var(--acc) 25%,transparent);animation:bl 1.4s infinite}
+@keyframes bl{50%{opacity:.25}}
+h1{font-size:clamp(40px,6.4vw,76px);line-height:1;letter-spacing:-3px;margin:22px 0 18px;font-weight:700}
+h1 em{font-style:normal;background:linear-gradient(100deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:18px;color:var(--mut);max-width:500px;margin:0 0 28px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.stage{position:relative;padding:18px 0}
+.stage::before{content:"";position:absolute;inset:-6% -8%;z-index:-1;border-radius:58% 42% 55% 45%/48% 56% 44% 52%;background:linear-gradient(135deg,color-mix(in srgb,var(--acc) 30%,transparent),color-mix(in srgb,var(--acc2) 10%,transparent));filter:blur(26px);animation:morph 12s ease-in-out infinite alternate}
+@keyframes morph{to{border-radius:42% 58% 45% 55%/58% 44% 56% 42%;transform:rotate(8deg) scale(1.04)}}
+.term{background:var(--term);border:1px solid rgba(255,255,255,.12);border-radius:40px;box-shadow:0 40px 70px -34px var(--glow),0 0 0 1px var(--line);overflow:hidden;font:14px/1.7 ui-monospace,Menlo,Consolas,monospace;color:var(--term-ink)}
+.term .bar{display:flex;gap:7px;padding:16px 22px;border-bottom:1px solid rgba(255,255,255,.08)}
+.term .bar i{width:11px;height:11px;border-radius:50%;background:#444}
+.term .bar i:first-child{background:#ff5f56}.term .bar i:nth-child(2){background:#ffbd2e}.term .bar i:nth-child(3){background:#27c93f}
+.term pre{margin:0;padding:18px 24px 24px;min-height:230px;white-space:pre-wrap;font:inherit}
+.term .ok{color:#7cf08a}.term .wn{color:#ffd166}
+.cur{display:inline-block;width:8px;height:15px;background:var(--term-ink);vertical-align:-2px;animation:bl 1s infinite;border-radius:3px}
+.fl{position:absolute;padding:9px 16px;border-radius:99px;background:var(--panel);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);box-shadow:var(--sh);font:700 13px "Space Grotesk",system-ui,sans-serif;animation:flt 5s ease-in-out infinite;white-space:nowrap}
+.fl.a{top:-4px;right:10px}.fl.b2{bottom:-2px;left:10px;animation-delay:-2.4s}
+@keyframes flt{50%{transform:translateY(-9px)}}
+.mq{overflow:hidden;white-space:nowrap;margin:48px 0 0;color:var(--mut);-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.mq div{display:inline-block;padding:18px 0;font-weight:500;font-size:14px;text-transform:uppercase;letter-spacing:3px;animation:mq 30s linear infinite}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* ---------- section ---------- */
+section{padding:92px 0 0}
+.k{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border-radius:99px;border:1px solid var(--line);background:var(--panel);font:500 12px ui-monospace,Menlo,monospace;color:var(--acc);letter-spacing:1.2px;text-transform:uppercase}
+.k::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--acc)}
+h2{font-size:clamp(30px,4.4vw,50px);line-height:1.04;letter-spacing:-1.8px;margin:16px 0 36px;max-width:720px}
+.b,.card,.panel{position:relative;border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--sh);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:radial-gradient(320px circle at var(--mx,-600px) var(--my,-600px),color-mix(in srgb,var(--acc) 16%,transparent),transparent 65%),var(--panel)}
+
+/* bento layanan */
+.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:minmax(176px,auto);gap:16px}
+.b{padding:26px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .25s,border-color .25s;overflow:hidden}
+.b:nth-child(3){border-radius:var(--r) var(--r) 90px var(--r)}
+.b:nth-child(5){border-radius:90px var(--r) var(--r) var(--r)}
+.b:hover,.card:hover{transform:translateY(-5px);border-color:color-mix(in srgb,var(--acc) 55%,var(--line))}
+.b h3{margin:12px 0 6px;font-size:20px;letter-spacing:-.3px}
+.b p{margin:0;color:var(--mut);font-size:14px}
+.b .n{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;font:700 12px ui-monospace,Menlo,monospace;color:var(--acc);background:color-mix(in srgb,var(--acc) 14%,transparent)}
+.go{margin-top:14px;font-weight:700;font-size:14px;color:var(--acc);align-self:flex-start;transition:transform .2s}
+.b:hover .go{transform:translateX(4px)}
+.b.big{grid-column:span 2;grid-row:span 2;border-radius:56px;background:linear-gradient(140deg,var(--acc),var(--acc2));color:var(--acc-ink);border-color:transparent;box-shadow:0 34px 60px -30px var(--glow);padding:34px}
+.b.big::after{content:"";position:absolute;right:-70px;top:-70px;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.17)}
+.b.big::before{content:"";position:absolute;right:50px;bottom:-90px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.1)}
+.b.big>*{position:relative;z-index:1}
+.b.big p,.b.big .n,.b.big .go{color:inherit}.b.big p{opacity:.88}.b.big h3{font-size:36px;letter-spacing:-1.2px}
+.b.big .n{background:rgba(255,255,255,.25)}
+.b.wide{grid-column:span 2;border-radius:var(--r) var(--r) var(--r) 90px}
+
+/* harga */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.panel{padding:32px}
+select,.search input{width:100%;padding:15px 22px;border-radius:99px;border:1px solid var(--line);background:color-mix(in srgb,var(--ink) 5%,transparent);color:var(--ink);font:500 16px "Space Grotesk",system-ui,sans-serif;outline:0;transition:.2s}
+select{margin:12px 0 18px}
+select:focus,.search input:focus{border-color:var(--acc);box-shadow:0 0 0 4px color-mix(in srgb,var(--acc) 20%,transparent)}
+.price{font-size:clamp(34px,5vw,54px);font-weight:700;letter-spacing:-2px;line-height:1.05;margin:4px 0;background:linear-gradient(100deg,var(--ink),var(--acc));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sm2{color:var(--mut);font-size:14px;margin:0 0 18px}
+table{width:100%;border-collapse:collapse}
+td{padding:14px 0;border-bottom:1px solid var(--line);font-size:15px;vertical-align:top}
+td:last-child{text-align:right;font-weight:700;white-space:nowrap;padding-left:14px;color:var(--acc)}
+tr:last-child td{border:0}
+.ticket{margin-top:56px;border:1px solid color-mix(in srgb,var(--acc) 40%,var(--line));border-radius:56px;padding:38px 44px;display:flex;flex-wrap:wrap;gap:22px;justify-content:space-between;align-items:center;background:linear-gradient(120deg,color-mix(in srgb,var(--acc) 16%,transparent),transparent 65%),var(--panel);backdrop-filter:blur(14px)}
+.ticket h3{margin:0;font-size:clamp(24px,4vw,38px);letter-spacing:-1.2px}
+.ticket p{margin:6px 0 0;color:var(--mut)}
+.code{font:700 24px ui-monospace,Menlo,monospace;letter-spacing:4px;background:linear-gradient(135deg,var(--acc),var(--acc2));color:var(--acc-ink);padding:8px 22px;border-radius:99px;display:inline-block;margin-top:14px;box-shadow:0 10px 24px -10px var(--glow)}
+
+/* afiliasi */
+.disc{padding:14px 22px;border-radius:99px;border:1px dashed color-mix(in srgb,var(--acc) 45%,var(--line));font-size:13px;color:var(--mut);background:var(--panel);margin-bottom:20px}
+.disc b{color:var(--ink)}
+.tools{display:grid;gap:12px;margin-bottom:20px}
+.chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:2px 2px 6px}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;padding:9px 20px;border-radius:99px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font:600 14px "Space Grotesk",system-ui,sans-serif;cursor:pointer;transition:.2s}
+.chip:hover{border-color:var(--acc)}
+.chip[aria-pressed="true"]{background:linear-gradient(135deg,var(--acc),var(--acc2));color:var(--acc-ink);border-color:transparent;box-shadow:0 8px 20px -8px var(--glow)}
+.cnt{font:500 13px ui-monospace,Menlo,monospace;color:var(--mut);margin-bottom:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}
+.card{padding:16px;display:flex;flex-direction:column;border-radius:40px;transition:transform .25s,border-color .25s;animation:up .5s both}
+@keyframes up{from{opacity:0;transform:translateY(14px)}}
+.tile{height:112px;border-radius:30px 30px 30px 60px;display:grid;place-items:center;font-size:48px;margin-bottom:14px;position:relative;background:linear-gradient(135deg,color-mix(in srgb,var(--acc) 22%,transparent),color-mix(in srgb,var(--acc2) 6%,transparent));border:1px solid var(--line)}
+.lb{position:absolute;top:12px;left:12px;font:700 10px ui-monospace,Menlo,monospace;padding:5px 11px;background:linear-gradient(135deg,var(--acc),var(--acc2));color:var(--acc-ink);border-radius:99px;text-transform:uppercase;letter-spacing:.6px}
+.cat{font:500 12px ui-monospace,Menlo,monospace;color:var(--acc);text-transform:uppercase;letter-spacing:.8px;padding:0 6px}
+.card h3{margin:4px 6px 6px;font-size:18px;line-height:1.25}
+.card p{margin:0 6px 12px;color:var(--mut);font-size:14px;flex:1}
+.pr{font-weight:700;margin:0 6px 12px;font-size:15px}.pr small{font-weight:400;color:var(--mut)}
+.shops{display:flex;flex-wrap:wrap;gap:8px}
+.shop{flex:1 1 auto;text-align:center;padding:10px 14px;border-radius:99px;font-weight:700;font-size:13px;color:#fff;transition:transform .2s,filter .2s;box-shadow:inset 0 1px 0 rgba(255,255,255,.25)}
+.shop:hover{transform:translateY(-2px);filter:brightness(1.1)}
+.shopee{background:#ee4d2d}.tokopedia{background:#03ac0e}.lazada{background:#0f146d}.tiktok{background:#111;border:1px solid #444}.lain{background:var(--acc);color:var(--acc-ink)}
+.empty{display:none;text-align:center;padding:40px 10px;color:var(--mut)}
+
+/* kontak */
+.row{display:flex;gap:12px;margin:14px 0}
+.cwrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:20px;align-items:start}
+.panel h3{margin:0 0 4px;font-size:22px;letter-spacing:-.5px}
+.strip{display:flex;margin:20px 0 22px}
+.th{width:76px;height:76px;border-radius:50%;margin-left:-16px;border:4px solid var(--bg);position:relative;overflow:hidden;display:grid;place-items:center;background:linear-gradient(135deg,color-mix(in srgb,var(--acc) 30%,transparent),color-mix(in srgb,var(--acc2) 12%,transparent))}
+.th:first-child{margin-left:0}
+.th img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.th svg,.pl svg{width:30px;height:30px;stroke:var(--acc);fill:none;stroke-width:1.6;opacity:.75;stroke-linecap:round;stroke-linejoin:round}
+
+/* ---------- galeri ---------- */
+.ghead{padding:64px 0 0;text-align:center}
+.ghead h1{font-size:clamp(38px,6vw,68px);letter-spacing:-2.6px;margin:20px auto 14px;max-width:760px}
+.ghead .lead{margin:0 auto 30px}
+.gbar{display:flex;justify-content:center;margin-bottom:10px}
+.gbar .chips{justify-content:center;flex-wrap:wrap;overflow:visible}
+.masonry{column-count:3;column-gap:16px;margin-top:22px}
+.ph{margin:0 0 16px;position:relative;overflow:hidden;break-inside:avoid;border-radius:36px;background:linear-gradient(135deg,color-mix(in srgb,var(--acc) 24%,transparent),color-mix(in srgb,var(--acc2) 8%,transparent));border:1px solid var(--line);cursor:pointer;transition:transform .35s,box-shadow .35s;animation:up .5s both;display:block}
+.ph.r0{aspect-ratio:4/5}.ph.r1{aspect-ratio:1}.ph.r2{aspect-ratio:4/3;border-radius:36px 36px 36px 90px}
+.ph.r3{aspect-ratio:3/4;border-radius:50% 50% 36px 36px/26% 26% 36px 36px}
+.ph.r4{aspect-ratio:1;border-radius:90px 36px 36px 36px}
+.ph:hover{transform:translateY(-4px);box-shadow:0 26px 44px -20px var(--glow)}
+.ph:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s}
+.ph:hover img{transform:scale(1.07)}
+.pl{position:absolute;inset:0;display:grid;place-items:center;align-content:center;gap:6px}
+.ph figcaption{position:absolute;left:12px;right:12px;bottom:12px;padding:9px 16px;border-radius:99px;font-size:13px;font-weight:700;color:#fff;background:rgba(6,20,36,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);width:fit-content;max-width:calc(100% - 24px)}
+.ph.r3 figcaption{left:50%;transform:translateX(-50%);white-space:nowrap}
+.gnote{margin:26px auto 0;max-width:560px;text-align:center;font-size:13px;color:var(--mut)}
+#lb{position:fixed;inset:0;z-index:80;background:rgba(4,12,22,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);display:none;place-items:center;padding:20px;cursor:zoom-out}
+#lb.on{display:grid}
+#lb figure{margin:0;max-width:920px;text-align:center;color:#fff}
+#lb img{max-width:100%;max-height:76vh;border-radius:36px;box-shadow:0 40px 80px -20px #000}
+#lb figcaption{margin-top:16px;font-weight:700}
+.lbn{position:absolute;top:50%;transform:translateY(-50%);width:50px;height:50px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.12);backdrop-filter:blur(8px);color:#fff;font:700 22px "Space Grotesk",sans-serif;cursor:pointer;display:grid;place-items:center;transition:.2s}
+.lbn:hover{background:rgba(255,255,255,.25)}
+.lbn.p{left:16px}.lbn.nx{right:16px}.lbn.x{top:calc(22px + env(safe-area-inset-top,0px));right:16px;transform:none;font-size:18px}
+
+footer{margin-top:92px;border-top:1px solid var(--line);padding:28px 0 100px;font-size:14px;color:var(--mut);text-align:center}
+.fab{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:70;width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,#2fe27a,#18b457);display:grid;place-items:center;box-shadow:0 14px 30px -8px rgba(37,211,102,.5),inset 0 1px 0 rgba(255,255,255,.4);animation:ring 2.4s infinite}
+@keyframes ring{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}70%{box-shadow:0 0 0 18px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.fab svg{width:28px;height:28px;fill:#fff}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}.rv.in{opacity:1;transform:none}
+
+@media (max-width:1020px){.links{display:none}}
+@media (max-width:860px){
+  .hero .w,.two,.cwrap{grid-template-columns:1fr}
+  .bento{grid-template-columns:1fr 1fr}
+  .b.big,.b.wide{grid-column:span 2}.b.big{grid-row:auto}
+  .hero{padding-top:34px}
+  .masonry{column-count:2}
+  .ticket{padding:30px 28px;border-radius:44px}
+  .fl.a{right:0}.fl.b2{left:0}
 }
-
-.service-card .btn-primary{
-  margin-top:auto;
+@media (max-width:560px){
+  .cap .btn{display:none}
+  .logo span{display:none}
+  .tabs a{padding:8px 11px;font-size:13px}.lg{display:none}.tgl{width:36px;height:36px}
+  .masonry{column-gap:12px}.ph{margin-bottom:12px;border-radius:28px}
+  .disc{border-radius:26px}
 }
-
-  .service-card:hover{ transform:translateY(-8px); box-shadow:0 12px 30px rgba(0,0,0,0.4);}
-  .service-card img{width:92px; height:92px; object-fit:contain; margin-bottom:12px}
-  .service-card h4{color:var(--accent); margin:6px 0}
-  .service-card p{color:var(--muted); font-size:14px}
-
-  /* FEATURES (Keunggulan) */
-  .features{display:flex; gap:14px; flex-wrap:wrap; margin-top:18px}
-  .feat{flex:1; min-width:160px; background:linear-gradient(180deg, var(--panel-contrast), rgba(255,255,255,0.01)); padding:14px;border-radius:12px; text-align:center; border:1px solid var(--card-border)}
-  .feat strong{display:block;color:var(--accent); font-size:16px; margin-bottom:6px}
-  .feat small{color:var(--muted)}
-
-  /* PRICING TABLE */
-  .price-table{width:100%; border-collapse:collapse; margin-top:14px}
-  .price-table th, .price-table td{padding:12px; border:1px solid var(--table-border); background:var(--table-bg); text-align:left; color:var(--muted)}
-  .price-table th{background:var(--table-header-bg); color:var(--muted); font-weight:600}
-  
-
-  /* FLOAT WA + STICKY BAR */
-  .wa-float{position:fixed; right:18px; bottom:20px; width:56px; height:56px; border-radius:999px; background:var(--accent-2); display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(37,211,102,0.16); z-index:80}
-  .sticky-bottom{position:fixed;left:0;right:0;bottom:0;background:var(--sticky-bg); padding:8px 12px; display:flex; gap:8px; align-items:center; justify-content:center; z-index:70}
-  .sticky-btn{background:var(--panel-bg); padding:10px 14px;border-radius:10px;color:var(--muted); text-decoration:none; display:flex; gap:8px; align-items:center; font-weight:600}
-
-  /* PROMO POPUP */
-  .promo-backdrop{position:fixed; inset:0; background:var(--promo-backdrop); display:flex; align-items:center; justify-content:center; z-index:999}
-  .promo{background:linear-gradient(180deg,#fff,#f0f6ff); color:var(--dark-text); width:92%; max-width:480px; border-radius:12px; padding:18px; box-shadow:0 16px 50px rgba(2,6,23,0.6); text-align:center}
-  .promo h4{color:var(--accent)}
-  .promo p{color:#203445}
-
-  /* TOGGLE (light/dark) */
-  .toggle{background:rgba(255,255,255,0.06); padding:8px; border-radius:999px; display:inline-flex; gap:8px; align-items:center}
-
-  /* AOS-like helper */
-  [data-anim]{opacity:0; transform:translateY(12px); transition: all .7s cubic-bezier(.2,.9,.3,1)}
-  [data-anim].in{opacity:1; transform:none}
-
-  @media (max-width:880px){ .hero{flex-direction:column} .hero-right{width:100%; max-width:100%} .hero img{width:100%} .nav nav{display:none} .search{display:none} }
-  @media (max-width:520px){ .hero{padding:18px} .hero-left h2{font-size:24px} .slider .slide{height:220px} }
-
-  /* Ensure grid cards all same height and images centered */
-  .grid { align-items: stretch; }
-  .grid > .service-card { /* for grid items directly */
-    height: 100%;
-  }
-  /* In case service-card wrapped in article (keep both) */
-  article.service-card { height: 100%; display: flex; flex-direction: column; justify-content: space-between; }
-
-  .service-card img{
-    width:92px;
-    height:92px;
-    object-fit:contain;
-    margin:12px auto 12px;
-    display:block;
-  }
-
-  /* Ensure title and description spacing is consistent */
-  .service-card h4{ margin:6px 0 8px; }
-  .service-card p{ margin:6px 0 10px; }
-
-  /* Make button alignment robust */
-  .service-card .btn-primary{
-    margin-top:auto;
-    align-self:center;
-    padding:10px 16px;
-    min-width:140px;
-  }
-
-  /* Give cards a consistent min-height to avoid wrapping issues */
-  @media (min-width:720px){
-    .service-card{ min-height:300px; }
-  }
-
+@media (max-width:480px){.bento{grid-template-columns:1fr}.b.big,.b.wide{grid-column:auto}.b:nth-child(3),.b:nth-child(5){border-radius:var(--r)}.b.wide{border-radius:var(--r)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 </style>
 </head>
-<body>
+<body data-view="home">
+<header><div class="cap">
+  <a href="#beranda" class="logo"><b>SR</b><span>Sumber Rezeki</span></a>
+  <div class="tabs" role="tablist" aria-label="Halaman"><a href="#beranda" data-t="home" role="tab">Beranda</a><a href="#sparepart" data-t="sparepart" role="tab">Sparepart</a><a href="#galeri" data-t="galeri" role="tab">Galeri<span class="lg"> Foto</span></a></div>
+  <nav class="links"><a href="#layanan">Layanan</a><a href="#harga">Harga</a><a href="#kontak">Kontak</a></nav>
+  <a class="btn sm" href="https://wa.me/6282299262564?text=Halo%20Sumber%20Rezeki%2C%20laptop%20saya%20ingin%20diservice.">Chat WA</a>
+  <button class="tgl" id="tgl" type="button" aria-label="Ganti tema terang/gelap">☀</button>
+</div></header>
 
-<!-- PRELOADER -->
-<div id="preloader" aria-hidden="true">
-  <div style="display:flex;align-items:center;gap:12px;">
-    <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+<main>
+<!-- ================= TAB 1: BERANDA ================= -->
+<div class="view" id="home">
+<div class="hero" id="beranda"><div class="w">
+  <div>
+    <span class="tag"><i></i>free diagnosa · garansi 30 hari</span>
+    <h1>Laptop mati? Kami <em>hidupkan.</em></h1>
+    <p class="lead">Service laptop Medan: instal ulang, ganti LCD, keyboard, cleaning, upgrade SSD/RAM. Estimasi 1–3 hari, harga dikabari sebelum dikerjakan.</p>
+    <div class="cta">
+      <a class="btn" href="https://wa.me/6282299262564?text=Halo%20Sumber%20Rezeki%2C%20laptop%20saya%20ingin%20diservice.">Chat WhatsApp →</a>
+      <a class="btn o" href="#galeri">Lihat Hasil Kerja</a>
+    </div>
   </div>
-  <div style="margin-top:14px; color:rgba(255,255,255,0.7); font-weight:600">Memuat... tunggu sebentar</div>
+  <div class="stage rv">
+    <div class="term" aria-label="Simulasi diagnosa laptop"><div class="bar"><i></i><i></i><i></i></div><pre id="t"></pre></div>
+    <span class="fl a">✓ Garansi 30 hari</span>
+    <span class="fl b2">⚡ Estimasi 1–3 hari</span>
+  </div>
+</div></div>
+
+<div class="mq" aria-hidden="true"><div id="mq"></div></div>
+
+<section id="layanan"><div class="w">
+  <div class="k">layanan</div>
+  <h2>Apa pun masalahnya, ada solusinya.</h2>
+  <div class="bento">
+    <div class="b big rv"><div><span class="n">01</span><h3>Instal Ulang OS</h3><p>Instalasi & optimasi, driver lengkap, bebas virus. Laptop lemot jadi segar lagi.</p></div><a class="go" href="https://wa.me/6282299262564?text=Halo%2C%20saya%20mau%20instal%20ulang%20laptop.">Pesan via WA →</a></div>
+    <div class="b rv"><div><span class="n">02</span><h3>Ganti LCD</h3><p>Cek konektor & kualitas panel.</p></div><a class="go" href="https://wa.me/6282299262564?text=Halo%2C%20saya%20mau%20ganti%20LCD.">WA →</a></div>
+    <div class="b rv"><div><span class="n">03</span><h3>Ganti Keyboard</h3><p>Tombol rusak atau error.</p></div><a class="go" href="https://wa.me/6282299262564?text=Halo%2C%20saya%20mau%20ganti%20keyboard.">WA →</a></div>
+    <div class="b rv"><div><span class="n">04</span><h3>Ganti Baterai</h3><p>Drop atau tak bisa charging.</p></div><a class="go" href="https://wa.me/6282299262564?text=Halo%2C%20saya%20mau%20ganti%20baterai.">WA →</a></div>
+    <div class="b rv"><div><span class="n">05</span><h3>Cleaning & Thermal</h3><p>Panas & berisik? Beres.</p></div><a class="go" href="https://wa.me/6282299262564?text=Halo%2C%20saya%20mau%20cleaning%20laptop.">WA →</a></div>
+    <div class="b wide rv"><div><span class="n">06</span><h3>Upgrade SSD/RAM · Recovery Data · Mati Total</h3><p>Bluescreen, no display, atau butuh ngebut? Diagnosa gratis, biaya dikabari sebelum dikerjakan.</p></div><a class="go" href="https://wa.me/6282299262564?text=Halo%2C%20saya%20mau%20konsultasi%20kerusakan%20laptop.">Diagnosa gratis →</a></div>
+  </div>
+</div></section>
+
+<section id="harga"><div class="w">
+  <div class="k">harga</div>
+  <h2>Harga jujur, tanpa kejutan.</h2>
+  <div class="two">
+    <div class="panel rv">
+      <b>Cek estimasi cepat</b>
+      <select id="sel" aria-label="Pilih layanan"><option value="0">Instal Ulang Windows</option><option value="1">Cleaning & Thermal Paste</option><option value="2">Ganti Keyboard</option><option value="3">Ganti LCD</option><option value="4">Upgrade RAM/SSD & lainnya</option></select>
+      <div class="price" id="pr">Rp 50.000</div>
+      <p class="sm2" id="pn"></p>
+      <a class="btn" id="pb" href="https://wa.me/6282299262564">Pesan layanan ini →</a>
+    </div>
+    <div class="panel rv"><table>
+      <tr><td>Instal Ulang Windows</td><td>Rp 50.000</td></tr>
+      <tr><td>Cleaning & Thermal Paste</td><td>Rp 55.000</td></tr>
+      <tr><td>Ganti Keyboard<br><small style="color:var(--mut)">konfirmasi tipe laptop</small></td><td>Rp 110rb – 250rb</td></tr>
+      <tr><td>Ganti LCD<br><small style="color:var(--mut)">konfirmasi tipe laptop</small></td><td>Rp 550rb – 950rb</td></tr>
+      <tr><td>Upgrade RAM/SSD, padam, bluescreen, no display, sparepart, dll</td><td>Konfirmasi</td></tr>
+    </table></div>
+  </div>
+  <div class="ticket rv">
+    <div><h3>Promo bulan ini: diskon 10%</h3><p>Untuk layanan instal ulang. Sebutkan kode saat chat.</p><span class="code">SR10</span></div>
+    <a class="btn" href="https://wa.me/6282299262564?text=Halo%2C%20saya%20mau%20klaim%20promo%20SR10.">Klaim via WA →</a>
+  </div>
+</div></section>
+
+<section id="kontak"><div class="w">
+  <div class="k">kontak</div>
+  <h2>Mampir, chat, atau lihat hasil kerja kami.</h2>
+  <div class="cwrap">
+    <div class="panel rv">
+      <h3>Hubungi kami</h3>
+      <p class="sm2">Buka setiap hari. Chat dulu supaya antrean lebih cepat.</p>
+      <div class="row"><span>📍</span><span>Jl. Luku I Kelurahan No.8, Kwala Bekala, Kec. Medan Johor, Kota Medan, Sumatera Utara 20142</span></div>
+      <div class="row"><span>📞</span><span>+62 822-9926-2564</span></div>
+      <div class="cta" style="margin-top:20px"><a class="btn" href="https://wa.me/6282299262564">WhatsApp</a><a class="btn o" href="https://www.google.com/maps/search/?api=1&query=3.5412828,98.6584041" target="_blank" rel="noopener">Google Maps</a></div>
+    </div>
+    <div class="panel rv">
+      <h3>Foto pekerjaan kami</h3>
+      <p class="sm2" style="margin:0">Hasil nyata dari meja teknisi, lengkap dengan filter per jenis layanan.</p>
+      <div class="strip" id="strip"></div>
+      <a class="btn" href="#galeri">Buka Galeri Foto →</a>
+    </div>
+  </div>
+</div></section>
 </div>
 
-<!-- NAVBAR -->
-<header class="nav" role="banner">
-  <div class="brand">
-    <div class="logo-circle">SR</div>
-    <div>
-      <div style="font-size:13px;color:var(--muted)">Service</div>
-      <div style="font-weight:700;color:var(--accent)">Sumber Rezeki</div>
+<!-- ================= TAB 2: SPAREPART ================= -->
+<div class="view" id="sparepart">
+<section id="rekomendasi" style="padding-top:64px"><div class="w">
+  <div class="k">sparepart</div>
+  <h2>Sparepart pilihan teknisi.</h2>
+  <div class="disc"><b>Transparansi:</b> link di bagian ini adalah link afiliasi. Jika Anda membeli lewat link tersebut, kami bisa menerima komisi kecil <b>tanpa biaya tambahan</b> untuk Anda.</div>
+  <div class="tools">
+    <div class="search"><input id="q" type="search" placeholder="Cari produk, misalnya SSD atau charger" aria-label="Cari produk"></div>
+    <div class="chips" id="chips"></div>
+  </div>
+  <div class="cnt" id="cnt"></div>
+  <div class="grid" id="grid"></div>
+  <div class="empty" id="empty">Produk tidak ditemukan. Coba kata kunci lain atau tanya teknisi kami.</div>
+  <div class="ticket">
+    <div><h3>Tidak yakin cocok?</h3><p>Kirim tipe laptop Anda, kami cek kompatibilitasnya. Bisa sekalian dipasang teknisi.</p></div>
+    <a class="btn" href="https://wa.me/6282299262564?text=Halo%20Sumber%20Rezeki%2C%20saya%20mau%20tanya%20kecocokan%20sparepart%20untuk%20laptop%20saya.">Tanya via WA →</a>
+  </div>
+</div></section>
+</div>
+
+<!-- ================= TAB 3: GALERI FOTO ================= -->
+<div class="view" id="galeri">
+  <div class="w">
+    <div class="ghead">
+      <span class="k">galeri foto</span>
+      <h1>Hasil kerja <em>nyata</em> dari meja teknisi.</h1>
+      <p class="lead">Bukan foto stok. Ini laptop pelanggan yang sudah kami tangani. Klik foto untuk memperbesar.</p>
+    </div>
+    <div class="gbar"><div class="chips" id="gchips"></div></div>
+    <div class="cnt" id="gcnt" style="text-align:center"></div>
+    <div class="masonry" id="gal"></div>
+    <div class="ticket">
+      <div><h3>Laptop Anda mau seperti ini?</h3><p>Chat dulu, diagnosa gratis. Biaya dikabari sebelum dikerjakan.</p></div>
+      <a class="btn" href="https://wa.me/6282299262564?text=Halo%20Sumber%20Rezeki%2C%20saya%20lihat%20galeri%20kerja%20kalian%20dan%20mau%20service%20laptop.">Chat WhatsApp →</a>
     </div>
   </div>
-
-  <nav aria-label="Main Navigation">
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#service">Service</a></li>
-      <li><a href="#features">Keunggulan</a></li>
-      <li><a href="#harga">Harga</a></li>
-      <li><a href="#kontak">Kontak</a></li>
-    </ul>
-  </nav>
-
-  <div class="nav-actions">
-    <div class="search"><input placeholder="Cari layanan..." style="background:transparent;border:none;color:var(--muted);outline:none" /></div>
-    <div class="toggle" id="themeToggle" title="Toggle tema">
-      <svg id="sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-  <circle cx="12" cy="12" r="5"/>
-  <line x1="12" y1="1" x2="12" y2="3"/>
-  <line x1="12" y1="21" x2="12" y2="23"/>
-  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-  <line x1="1" y1="12" x2="3" y2="12"/>
-  <line x1="21" y1="12" x2="23" y2="12"/>
-  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-</svg>
-      <svg id="moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-  <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
-</svg>
-    </div>
-  </div>
-</header>
-
-<!-- HERO -->
-<main id="home">
-  <div class="hero-wrap">
-    <section class="hero" aria-label="hero">
-      <div class="hero-left" data-anim>
-        <h2>Solusi Cepat & Terpercaya untuk Laptop Anda</h2>
-        <p>Instal ulang, ganti LCD, cleaning, upgrade SSD/RAM, recovery data — teknisi berpengalaman & bergaransi.</p>
-
-        <div class="cta-row">
-          <a class="btn-primary" href="tel:+6282299262564">☎ Telepon</a>
-          <a class="btn-ghost" href="#service">Lihat Layanan</a>
-          <a class="btn-primary" href="https://wa.me/+6282299262564" style="background:linear-gradient(90deg,var(--accent),#6ec1ff)">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" style="width:18px;margin-right:8px"> Chat WA
-          </a>
-        </div>
-
-        <div style="margin-top:16px" class="features" data-anim>
-          <div class="feat"><strong>Estimasi 1–3 Hari</strong><small>Work cepat</small></div>
-          <div class="feat"><strong>Garansi 30 Hari</strong><small>Jaminan aman</small></div>
-          <div class="feat"><strong>Free Diagnosa</strong><small>Tidak dipungut biaya</small></div>
-          <div class="feat"><strong>Harga Terjangkau</strong><small>Transparan</small></div>
-        </div>
-      </div>
-
-      <div class="hero-right" data-anim>
-        <div class="slider" id="slider">
-          <div class="slide active" style="background-image:url('https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=1200')"></div>
-          <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200')"></div>
-          <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200')"></div>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <!-- SERVICES -->
-  <section class="section" id="service">
-    <div style="max-width:1200px;margin:auto;padding:0 20px">
-      <h3>Layanan Kami</h3>
-      <div class="grid" id="servicesGrid">
-
-        <article class="service-card" data-anim>
-          <img alt="install" src="https://cdn-icons-png.flaticon.com/512/5815/5815667.png">
-          <h4>Instal Ulang OS</h4>
-          <p>Instalasi & optimasi, driver lengkap, bebas virus.</p>
-          <p><a class="btn-primary" href="https://wa.me/+6282299262564">Hubungi via WA</a></p>
-        </article>
-
-        <article class="service-card" data-anim>
-          <img alt="lcd" src="https://cdn-icons-png.flaticon.com/512/13839/13839326.png">
-          <h4>Ganti LCD Laptop</h4>
-          <p>Penggantian layar, periksa konektor & kualitas panel.</p>
-          <p><a class="btn-primary" href="https://wa.me/+6282299262564">Hubungi via WA</a></p>
-        </article>
-
-        <article class="service-card" data-anim>
-          <img alt="keyboard" src="https://cdn-icons-png.flaticon.com/512/17358/17358953.png">
-          <h4>Ganti Keyboard</h4>
-          <p>Keyboard rusak, tombol tidak berfungsi.</p>
-          <p><a class="btn-primary" href="https://wa.me/+6282299262564">Hubungi via WA</a></p>
-        </article>
-
-        <article class="service-card" data-anim>
-          <img alt="battery" src="https://cdn-icons-png.flaticon.com/512/8772/8772524.png">
-          <h4>Ganti Baterai</h4>
-          <p>Baterai drop atau tidak bisa charging.</p>
-          <p><a class="btn-primary" href="https://wa.me/+6282299262564">Hubungi via WA</a></p>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- HARGA -->
-  <section class="section" id="harga">
-    <div style="max-width:1000px;margin:auto;padding:0 20px">
-      <h3>Daftar Harga</h3>
-      <table class="price-table">
-        <thead>
-          <tr><th>Layanan</th><th>Harga</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Instal Ulang Windows</td><td>Rp 50.000</td></tr>
-          <tr><td>Cleaning & Thermal Paste</td><td>Rp 55.000</td></tr>
-          <tr><td>Ganti Keyboard (Bisa Konfirmasi Type Laptop) </td><td>Rp 110.000 – 250.000</td></tr>
-          <tr><td>Ganti LCD (Bisa Konfirmasi Type Laptop)</td><td>Rp 550.000 – 950.000</td></tr>
-          <tr><td>Terima Perbaikan (Upgrade Ram, Upgrade SSD, Padam, Bluescreen, No Display, Ganti Sparepart, DLL)</td><td>Konfirmasi</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <!-- KEUNGGULAN -->
-  <section class="section" id="features">
-    <div style="max-width:1200px;margin:auto;padding:0 20px">
-      <h3>Kenapa Pilih Sumber Rezeki?</h3>
-      <div style="display:flex;gap:14px;flex-wrap:wrap">
-        <div class="feat" data-anim><strong>Pengalaman</strong><small>Teknisi bersertifikat</small></div>
-        <div class="feat" data-anim><strong>Garansi</strong><small>30 Hari Service</small></div>
-        <div class="feat" data-anim><strong>Harga Jujur</strong><small>Estimasi sebelum kerja</small></div>
-        <div class="feat" data-anim><strong>Layanan Panggilan</strong><small>Bisa datang ke lokasi</small></div>
-      </div>
-    </div>
-  </section>
+</div>
 </main>
 
-<!-- PROMO -->
-<div id="promoBackdrop" class="promo-backdrop" style="display:none">
-  <div class="promo" role="dialog" aria-modal="true">
-    <h4>Promo Spesial Bulan Ini</h4>
-    <p>Dapatkan diskon 10% untuk layanan instal ulang — gunakan kode: SR10 </p>
-    <div style="display:flex;gap:10px;justify-content:center;margin-top:14px">
-      <a class="btn-primary" href="https://wa.me/+6282299262564">Klaim via WA</a>
-      <button id="promoClose" style="background:transparent;border:1px solid rgba(0,0,0,0.06);padding:10px 14px;border-radius:8px;">Tutup</button>
-    </div>
-  </div>
+<footer><div class="w">© <span id="yr">2025</span> Sumber Rezeki Service Laptop · Medan<br>Harga dan ketersediaan produk afiliasi dapat berubah di toko.</div></footer>
+<a class="fab" href="https://wa.me/6282299262564?text=Halo%20Sumber%20Rezeki%2C%20laptop%20saya%20ingin%20diservice." aria-label="Chat WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.1-1.3A10 10 0 1 0 12 2zm5.2 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.2c.1.2.1.4 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.2z"/></svg></a>
+
+<div id="lb" role="dialog" aria-modal="true" aria-label="Foto pekerjaan">
+  <button class="lbn x" id="lbx" aria-label="Tutup">✕</button>
+  <button class="lbn p" id="lbp" aria-label="Foto sebelumnya">‹</button>
+  <figure><img alt=""><figcaption></figcaption></figure>
+  <button class="lbn nx" id="lbnx" aria-label="Foto berikutnya">›</button>
 </div>
 
-<!-- ACTION BAR -->
-<div class="sticky-bottom">
-  <a class="sticky-btn" href="https://wa.me/+6282299262564"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" style="width:18px"> WhatsApp</a>
-  <a class="sticky-btn" href="tel:+6282299262564">☎ Telepon</a>
-  <a class="sticky-btn" href="https://www.google.com/maps/place/Jl.+Luku+I+Kelurahan+No.8,+Kwala+Bekala,+Kec.+Medan+Johor,+Kota+Medan,+Sumatera+Utara+20142/@3.5412882,98.6558292,17z/data=!3m1!4b1!4m6!3m5!1s0x30312fff923eb0df:0x2acff9cc5e4b0175!8m2!3d3.5412828!4d98.6584041!16s%2Fg%2F11j4dg8k7g?entry=ttu&g_ep=EgoyMDI1MTExMi4wIKXMDSoASAFQAw%3D%3D" target="_blank">📍 Lokasi</a>
-</div>
-
-<a class="wa-float" href="https://wa.me/+6282299262564" target="_blank">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA" style="width:30px">
-</a>
-
-<!-- FOOTER -->
-<footer id="kontak" style="padding:28px; text-align:center; color:var(--muted); margin-top:30px">
-  <div style="max-width:1000px;margin:auto;padding:0 20px">
-    <p style="margin-bottom:6px">Sumber Rezeki • Service Laptop • Medan</p>
-    <p style="margin:0">Email: tarmijinainggolan25@gmail.com • Telp: +62 822-9926-2564</p>
-    <p style="margin-top:8px;font-size:13px;color:rgba(255,255,255,0.5)">© 2025 Sumber Rezeki Service Laptop</p>
-  </div>
-</footer>
-
-<!-- SCRIPTS -->
 <script>
+/* ============================================================
+   CARA ISI PRODUK AFILIASI
+   - Satu produk = satu blok { ... }. Salin blok untuk menambah.
+   - `toko`: isi link afiliasi Anda. Jenis: shopee, tokopedia, lazada, tiktok, lain.
+   - `harga` boleh "" (tampil "Cek harga terbaru di toko").
+   - `label` opsional, misalnya "Terlaris". `ikon` bebas emoji.
+   Semua link di bawah masih CONTOH. Ganti dengan link Anda.
+   ============================================================ */
+var S="https://shopee.co.id/GANTI-LINK-AFILIASI-ANDA",T="https://www.tokopedia.com/GANTI-LINK-AFILIASI-ANDA",L="https://www.lazada.co.id/GANTI-LINK-AFILIASI-ANDA";
+var PRODUK=[
+  {nama:"SSD NVMe 512GB",kategori:"Penyimpanan",ikon:"💾",label:"Pilihan Teknisi",harga:"",deskripsi:"Bikin laptop lama jauh lebih ngebut. Pastikan slot mendukung NVMe.",toko:[{jenis:"shopee",url:S},{jenis:"tokopedia",url:T}]},
+  {nama:"SSD SATA 2,5 inci 256GB",kategori:"Penyimpanan",ikon:"🗄️",label:"",harga:"",deskripsi:"Upgrade hemat untuk laptop yang masih memakai hardisk.",toko:[{jenis:"shopee",url:S}]},
+  {nama:"RAM DDR4 8GB SODIMM",kategori:"Memori",ikon:"🧠",label:"Terlaris",harga:"",deskripsi:"Multitasking lebih lega. Cek dulu jenis RAM laptop Anda.",toko:[{jenis:"shopee",url:S},{jenis:"tokopedia",url:T}]},
+  {nama:"Charger / Adaptor Laptop",kategori:"Daya",ikon:"🔌",label:"",harga:"",deskripsi:"Pengganti sesuai merk dan tipe laptop. Kirim tipe untuk dicek.",toko:[{jenis:"shopee",url:S},{jenis:"lazada",url:L}]},
+  {nama:"Baterai Laptop Pengganti",kategori:"Daya",ikon:"🔋",label:"",harga:"",deskripsi:"Untuk baterai yang sudah drop atau tidak bisa charging.",toko:[{jenis:"tokopedia",url:T}]},
+  {nama:"Keyboard Laptop Pengganti",kategori:"Sparepart",ikon:"⌨️",label:"",harga:"",deskripsi:"Tersedia untuk banyak tipe. Konfirmasi tipe sebelum membeli.",toko:[{jenis:"shopee",url:S}]},
+  {nama:"Thermal Paste",kategori:"Perawatan",ikon:"🧴",label:"",harga:"",deskripsi:"Untuk cleaning mandiri agar suhu CPU/GPU lebih adem.",toko:[{jenis:"shopee",url:S},{jenis:"tokopedia",url:T}]},
+  {nama:"Cooling Pad Laptop",kategori:"Aksesoris",ikon:"❄️",label:"",harga:"",deskripsi:"Bantu turunkan suhu saat dipakai lama atau main game.",toko:[{jenis:"shopee",url:S}]},
+  {nama:"Mouse Wireless",kategori:"Aksesoris",ikon:"🖱️",label:"",harga:"",deskripsi:"Praktis untuk kerja dan belajar, nyaman di tangan.",toko:[{jenis:"tiktok",url:"https://shop.tiktok.com/GANTI-LINK-AFILIASI-ANDA"},{jenis:"shopee",url:S}]},
+  {nama:"Tas / Sleeve Laptop",kategori:"Aksesoris",ikon:"🎒",label:"",harga:"",deskripsi:"Lindungi laptop dari benturan dan goresan.",toko:[{jenis:"lazada",url:L}]}
+];
+var NT={shopee:"Shopee",tokopedia:"Tokopedia",lazada:"Lazada",tiktok:"TikTok Shop",lain:"Lihat Produk"};
+
+/* ============================================================
+   FOTO PEKERJAAN (tab Galeri Foto)
+   1. Buat folder "foto" di samping file index.html, lalu unggah foto Anda
+      (disarankan lebar sekitar 1200px, format .jpg atau .webp).
+   2. Satu foto = satu baris { ... }. Salin baris untuk menambah foto.
+      src   = lokasi file foto
+      judul = teks yang tampil di foto
+      kat   = kategori untuk tombol filter (bebas, misalnya "Ganti LCD")
+   Selama foto belum ada, kotak placeholder yang tampil.
+   Foto yang gagal dimuat otomatis dilewati saat diperbesar.
+   ============================================================ */
+var FOTO=[
+  {src:"foto/kerja-1.jpg",judul:"Ganti LCD",kat:"Ganti LCD"},
+  {src:"foto/kerja-2.jpg",judul:"Cleaning & Thermal Paste",kat:"Cleaning"},
+  {src:"foto/kerja-3.jpg",judul:"Instal Ulang OS",kat:"Instal Ulang"},
+  {src:"foto/kerja-4.jpg",judul:"Upgrade SSD & RAM",kat:"Upgrade"},
+  {src:"foto/kerja-5.jpg",judul:"Ganti Keyboard",kat:"Keyboard"},
+  {src:"foto/kerja-6.jpg",judul:"Ganti Baterai",kat:"Baterai"},
+  {src:"foto/kerja-7.jpg",judul:"Ganti LCD",kat:"Ganti LCD"},
+  {src:"foto/kerja-8.jpg",judul:"Cleaning & Thermal Paste",kat:"Cleaning"}
+];
+
 (function(){
-  const pre = document.getElementById('preloader');
-  window.addEventListener('load', ()=> { setTimeout(()=> pre.style.display='none', 600); });
+  var $=function(i){return document.getElementById(i)};
+  function esc(x){return String(x).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
+  $("yr").textContent=new Date().getFullYear();
 
-  const slides = Array.from(document.querySelectorAll('.slide'));
-  let idx = 0, autointerval = 4500;
-  function showSlide(i){
-    slides.forEach(s=>s.classList.remove('active'));
-    slides[(i+slides.length)%slides.length].classList.add('active');
-  }
-  showSlide(0);
-  let timer = setInterval(()=>{ idx = (idx+1)%slides.length; showSlide(idx); }, autointerval);
+  // ---------- tema terang/gelap ----------
+  var tg=$("tgl"),root=document.documentElement;
+  function lab(){tg.textContent=root.getAttribute("data-theme")==="light"?"☾":"☀"}
+  lab();
+  tg.addEventListener("click",function(){
+    var t=root.getAttribute("data-theme")==="light"?"dark":"light";
+    root.setAttribute("data-theme",t);lab();
+    try{localStorage.setItem("sr-theme",t)}catch(e){}
+  });
 
-  let startX = 0;
-  const slider = document.getElementById('slider');
-  slider.addEventListener('touchstart', e => startX = e.changedTouches[0].clientX);
-  slider.addEventListener('touchend', e => {
-    let dx = e.changedTouches[0].clientX - startX;
-    if(Math.abs(dx) > 40){
-      if(dx < 0) idx = (idx+1)%slides.length; else idx = (idx-1+slides.length)%slides.length;
-      showSlide(idx);
-      clearInterval(timer); timer = setInterval(()=>{ idx = (idx+1)%slides.length; showSlide(idx); }, autointerval);
+  // ---------- tab / routing ----------
+  var last=null;
+  function route(){
+    var h=location.hash.slice(1),v=h==="galeri"?"galeri":(h==="sparepart"||h==="rekomendasi")?"sparepart":"home";
+    document.body.setAttribute("data-view",v);
+    document.title={galeri:"Galeri Foto — Sumber Rezeki Service Laptop Medan",sparepart:"Sparepart Laptop — Sumber Rezeki Medan",home:"Sumber Rezeki — Service Laptop Medan"}[v];
+    if(v!==last){
+      var el=v==="home"&&h&&$(h);
+      if(el)el.scrollIntoView();else window.scrollTo(0,0);
     }
-  });
-
-  const anims = document.querySelectorAll('[data-anim]');
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
-    })
-  }, {threshold: .15});
-  anims.forEach(a=> io.observe(a));
-
-  const promoKey = 'SR_promo_shown_v1';
-  const promoBackdrop = document.getElementById('promoBackdrop');
-  if(!localStorage.getItem(promoKey)){
-    setTimeout(()=> promoBackdrop.style.display='flex', 1500);
+    last=v;
   }
-  document.getElementById('promoClose').addEventListener('click', ()=> {
-    promoBackdrop.style.display='none';
-    localStorage.setItem(promoKey, '1');
-  });
+  window.addEventListener("hashchange",route);route();
 
-  const toggle = document.getElementById('themeToggle');
-  const root = document.documentElement;
-  const sun = document.getElementById('sun'), moon = document.getElementById('moon');
-  const themeKey = 'SR_theme_v1';
+  // ---------- ticker ----------
+  var w=["Instal ulang","Ganti LCD","Ganti keyboard","Cleaning","Upgrade SSD","Recovery data","Garansi 30 hari","Free diagnosa"],s="";
+  for(var i=0;i<4;i++)w.forEach(function(x){s+=x+" ✦ "});
+  $("mq").textContent=s;
+  try{var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});document.querySelectorAll(".rv").forEach(function(el){io.observe(el)})}catch(e){document.querySelectorAll(".rv").forEach(function(el){el.classList.add("in")})}
 
-  function setLight(){
-    root.style.setProperty('--bg', '#f6fbff');
-    root.style.setProperty('--card', '#ffffff');
-    root.style.setProperty('--accent', '#0f54b3');
-    root.style.setProperty('--muted', '#4a6b8a');
-    root.style.setProperty('--text', 'var(--dark-text)');
-    root.style.setProperty('--panel-bg', '#ffffff');
-    root.style.setProperty('--panel-border', 'rgba(0,0,0,0.12)');
-    root.style.setProperty('--panel-contrast', 'rgba(0,0,0,0.04)');
-    root.style.setProperty('--card-bg', '#ffffff');
-    root.style.setProperty('--card-border', 'rgba(0,0,0,0.08)');
-    root.style.setProperty('--table-bg', '#ffffff');
-    root.style.setProperty('--table-border', 'rgba(0,0,0,0.12)');
-    root.style.setProperty('--table-header-bg', 'rgba(0,0,0,0.04)');
-    root.style.setProperty('--sticky-bg', 'linear-gradient(180deg, rgba(246,251,255,0.9), rgba(240,246,255,0.95))');
-    root.style.setProperty('--promo-backdrop', 'rgba(2,6,23,0.12)');
-    sun.style.display='none'; moon.style.display='inline-block';
+  // ---------- terminal ----------
+  var lines=[["$ sr --diagnosa laptop",""],["memeriksa baterai ........ ","wn:perlu dicek"],["memeriksa disk & RAM ..... ","ok:OK"],["memeriksa layar ......... ","ok:OK"],["suhu CPU ................ ","wn:panas, butuh cleaning"],["",""],["estimasi ................ ","ok:1–3 hari"],["biaya diagnosa ........... ","ok:GRATIS"],["garansi .................. ","ok:30 hari"]];
+  var out=$("t"),li=0,ci=0,html="";
+  function fmt(v){if(!v)return"";var p=v.split(":");return '<span class="'+p[0]+'">'+esc(p.slice(1).join(":"))+"</span>"}
+  function tick(){
+    if(li>=lines.length){out.innerHTML=html+'<span class="cur"></span>';return}
+    var l=lines[li];
+    if(ci<=l[0].length){out.innerHTML=html+esc(l[0].slice(0,ci))+'<span class="cur"></span>';ci++;setTimeout(tick,l[0].charAt(0)==="$"?55:18);return}
+    html+=esc(l[0])+fmt(l[1])+"\n";li++;ci=0;setTimeout(tick,li===1?500:280);
   }
+  if(window.matchMedia&&matchMedia("(prefers-reduced-motion:reduce)").matches){lines.forEach(function(l){html+=esc(l[0])+fmt(l[1])+"\n"});out.innerHTML=html}else tick();
 
-  function setDark(){
-    root.style.setProperty('--bg', '#0f2a44');
-    root.style.setProperty('--card', '#0f172a');
-    root.style.setProperty('--accent', '#4cb4ff');
-    root.style.setProperty('--muted', '#94b8d7');
-    root.style.setProperty('--text', '#ffffff');
-    root.style.setProperty('--panel-bg', 'rgba(255,255,255,0.03)');
-    root.style.setProperty('--panel-border', 'rgba(255,255,255,0.03)');
-    root.style.setProperty('--panel-contrast', 'rgba(255,255,255,0.02)');
-    root.style.setProperty('--card-bg', 'rgba(255,255,255,0.03)');
-    root.style.setProperty('--card-border', 'rgba(255,255,255,0.03)');
-    root.style.setProperty('--table-bg', 'rgba(255,255,255,0.02)');
-    root.style.setProperty('--table-border', 'rgba(255,255,255,0.04)');
-    root.style.setProperty('--table-header-bg', 'rgba(255,255,255,0.06)');
-    root.style.setProperty('--sticky-bg', 'linear-gradient(180deg, rgba(12,26,42,0.9), rgba(2,10,18,0.92))');
-    root.style.setProperty('--promo-backdrop', 'rgba(2,6,23,0.6)');
-    sun.style.display='inline-block'; moon.style.display='none';
+  // ---------- estimator harga ----------
+  var D=[["Rp 50.000","Instal ulang + driver lengkap. Diskon 10% dengan kode SR10.","instal ulang Windows"],["Rp 55.000","Cleaning total + ganti thermal paste.","cleaning & thermal paste"],["Rp 110rb – 250rb","Tergantung tipe laptop. Konfirmasi via WA.","ganti keyboard"],["Rp 550rb – 950rb","Tergantung tipe laptop. Konfirmasi via WA.","ganti LCD"],["Konfirmasi","Kami diagnosa dulu, harga dikabari sebelum dikerjakan.","upgrade RAM/SSD atau perbaikan lain"]];
+  function up(){var d=D[$("sel").value];$("pr").textContent=d[0];$("pn").textContent=d[1];$("pb").href="https://wa.me/6282299262564?text="+encodeURIComponent("Halo Sumber Rezeki, saya mau "+d[2]+".")}
+  $("sel").addEventListener("change",up);up();
+
+  // ---------- produk afiliasi ----------
+  var aktif="Semua",kats=["Semua"];
+  PRODUK.forEach(function(p){if(kats.indexOf(p.kategori)<0)kats.push(p.kategori)});
+  $("chips").innerHTML=kats.map(function(k){return '<button class="chip" aria-pressed="'+(k===aktif)+'" data-k="'+esc(k)+'">'+esc(k)+"</button>"}).join("");
+  $("chips").addEventListener("click",function(e){var b=e.target.closest(".chip");if(!b)return;aktif=b.getAttribute("data-k");document.querySelectorAll("#chips .chip").forEach(function(c){c.setAttribute("aria-pressed",c===b)});render()});
+  $("q").addEventListener("input",render);
+  function render(){
+    var kw=$("q").value.trim().toLowerCase();
+    var list=PRODUK.filter(function(p){return(aktif==="Semua"||p.kategori===aktif)&&(!kw||(p.nama+" "+p.kategori+" "+p.deskripsi).toLowerCase().indexOf(kw)>-1)});
+    $("grid").innerHTML=list.map(function(p,i){
+      var sh=p.toko.map(function(t){var j=NT[t.jenis]?t.jenis:"lain";return '<a class="shop '+j+'" href="'+esc(t.url)+'" target="_blank" rel="sponsored nofollow noopener">'+esc(NT[j])+"</a>"}).join("");
+      return '<article class="card" style="animation-delay:'+(i*40)+'ms"><div class="tile">'+(p.label?'<span class="lb">'+esc(p.label)+"</span>":"")+esc(p.ikon||"🛒")+'</div><div class="cat">'+esc(p.kategori)+"</div><h3>"+esc(p.nama)+"</h3><p>"+esc(p.deskripsi)+'</p><div class="pr">'+(p.harga?esc(p.harga):"<small>Cek harga terbaru di toko</small>")+'</div><div class="shops">'+sh+"</div></article>";
+    }).join("");
+    $("cnt").textContent=list.length+" produk";
+    $("empty").style.display=list.length?"none":"block";
   }
+  render();
 
-  if(localStorage.getItem(themeKey) === 'light'){ setLight(); }
-  else { setDark(); }
+  // ---------- galeri foto ----------
+  var cam='<svg viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>';
+  var gal=$("gal"),lb=$("lb"),lim=lb.querySelector("img"),lcap=lb.querySelector("figcaption");
+  var gk="Semua",gkats=["Semua"];
+  FOTO.forEach(function(f){if(f.kat&&gkats.indexOf(f.kat)<0)gkats.push(f.kat)});
+  $("gchips").innerHTML=gkats.map(function(k){return '<button class="chip" aria-pressed="'+(k===gk)+'" data-k="'+esc(k)+'">'+esc(k)+"</button>"}).join("");
+  $("gchips").addEventListener("click",function(e){var b=e.target.closest(".chip");if(!b)return;gk=b.getAttribute("data-k");document.querySelectorAll("#gchips .chip").forEach(function(c){c.setAttribute("aria-pressed",c===b)});renderG()});
+  function renderG(){
+    var list=FOTO.filter(function(f){return gk==="Semua"||f.kat===gk});
+    gal.innerHTML=list.map(function(f,i){
+      return '<figure class="ph r'+(i%5)+'" tabindex="0" style="animation-delay:'+(i*50)+'ms"><div class="pl">'+cam+"</div>"+(f.src?'<img src="'+esc(f.src)+'" alt="'+esc(f.judul)+'" loading="lazy">':"")+"<figcaption>"+esc(f.judul)+"</figcaption></figure>";
+    }).join("");
+    gal.querySelectorAll("img").forEach(function(im){im.addEventListener("error",function(){im.remove()})});
+    $("gcnt").textContent=list.length+" foto";
+  }
+  renderG();
 
-  toggle.addEventListener('click', ()=> {
-    if(localStorage.getItem(themeKey) === 'light'){
-      localStorage.setItem(themeKey,'dark'); setDark();
-    } else {
-      localStorage.setItem(themeKey,'light'); setLight();
-    }
+  // teaser di halaman beranda
+  $("strip").innerHTML=FOTO.slice(0,4).map(function(f){return '<a class="th" href="#galeri" aria-label="'+esc(f.judul)+'">'+cam+(f.src?'<img src="'+esc(f.src)+'" alt="" loading="lazy">':"")+"</a>"}).join("");
+  $("strip").querySelectorAll("img").forEach(function(im){im.addEventListener("error",function(){im.remove()})});
+
+  // lightbox
+  var figs=[],ci2=0;
+  function show(){var im=figs[ci2].querySelector("img");lim.src=im.src;lim.alt=im.alt;lcap.textContent=im.alt;lb.classList.add("on")}
+  function step(d){if(!figs.length)return;ci2=(ci2+d+figs.length)%figs.length;show()}
+  function close(){lb.classList.remove("on")}
+  function openF(f){
+    if(!f||!f.querySelector("img"))return;
+    figs=[].slice.call(gal.querySelectorAll(".ph")).filter(function(x){return x.querySelector("img")});
+    ci2=figs.indexOf(f);if(ci2<0)return;show();
+  }
+  gal.addEventListener("click",function(e){openF(e.target.closest(".ph"))});
+  gal.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){var f=e.target.closest(".ph");if(f){e.preventDefault();openF(f)}}});
+  $("lbp").addEventListener("click",function(e){e.stopPropagation();step(-1)});
+  $("lbnx").addEventListener("click",function(e){e.stopPropagation();step(1)});
+  $("lbx").addEventListener("click",function(e){e.stopPropagation();close()});
+  lb.addEventListener("click",function(e){if(e.target===lb||e.target.tagName==="FIGURE"||e.target.tagName==="FIGCAPTION")close()});
+  document.addEventListener("keydown",function(e){
+    if(!lb.classList.contains("on"))return;
+    if(e.key==="Escape")close();else if(e.key==="ArrowLeft")step(-1);else if(e.key==="ArrowRight")step(1);
   });
+  var tx=null;
+  lb.addEventListener("touchstart",function(e){tx=e.touches[0].clientX},{passive:true});
+  lb.addEventListener("touchend",function(e){if(tx===null)return;var dx=e.changedTouches[0].clientX-tx;tx=null;if(Math.abs(dx)>50)step(dx<0?1:-1)},{passive:true});
 
+  // efek cahaya mengikuti kursor
+  document.addEventListener("pointermove",function(e){var t=e.target.closest&&e.target.closest(".b,.card,.panel");if(!t)return;var r=t.getBoundingClientRect();t.style.setProperty("--mx",(e.clientX-r.left)+"px");t.style.setProperty("--my",(e.clientY-r.top)+"px")});
+  document.addEventListener("pointerout",function(e){var t=e.target.closest&&e.target.closest(".b,.card,.panel");if(t&&!t.contains(e.relatedTarget)){t.style.removeProperty("--mx");t.style.removeProperty("--my")}});
 })();
 </script>
-
 </body>
 </html>
-
-
