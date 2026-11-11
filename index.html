@@ -136,6 +136,7 @@ tr:last-child td{border:0}
 .card{padding:16px;display:flex;flex-direction:column;border-radius:40px;transition:transform .25s,border-color .25s;animation:up .5s both}
 @keyframes up{from{opacity:0;transform:translateY(14px)}}
 .tile{height:112px;border-radius:30px 30px 30px 60px;display:grid;place-items:center;font-size:48px;margin-bottom:14px;position:relative;background:linear-gradient(135deg,color-mix(in srgb,var(--acc) 22%,transparent),color-mix(in srgb,var(--acc2) 6%,transparent));border:1px solid var(--line)}
+.tile .ik{height:56px;width:auto;max-width:80%;object-fit:contain;margin-top:14px;filter:invert(1);mix-blend-mode:screen;font-size:12px}
 .lb{position:absolute;top:12px;left:12px;font:700 10px ui-monospace,Menlo,monospace;padding:5px 11px;background:linear-gradient(135deg,var(--acc),var(--acc2));color:var(--acc-ink);border-radius:99px;text-transform:uppercase;letter-spacing:.6px}
 .cat{font:500 12px ui-monospace,Menlo,monospace;color:var(--acc);text-transform:uppercase;letter-spacing:.8px;padding:0 6px}
 .card h3{margin:4px 6px 6px;font-size:18px;line-height:1.25}
@@ -425,20 +426,43 @@ footer{margin-top:92px;border-top:1px solid var(--line);padding:28px 0 100px;fon
    Semua link di bawah masih CONTOH. Ganti dengan link Anda.
    ============================================================ */
 var S="https://shopee.co.id/GANTI-LINK-AFILIASI-ANDA",T="https://www.tokopedia.com/GANTI-LINK-AFILIASI-ANDA",L="https://www.lazada.co.id/GANTI-LINK-AFILIASI-ANDA";
-var PRODUK=[
-  {nama:"SSD NVMe 512GB",kategori:"Penyimpanan",ikon:"💾",label:"Pilihan Teknisi",harga:"",deskripsi:"Bikin laptop lama jauh lebih ngebut. Pastikan slot mendukung NVMe.",toko:[{jenis:"shopee",url:S},{jenis:"tokopedia",url:T}]},
-  {nama:"SSD SATA 2,5 inci 256GB",kategori:"Penyimpanan",ikon:"🗄️",label:"",harga:"",deskripsi:"Upgrade hemat untuk laptop yang masih memakai hardisk.",toko:[{jenis:"shopee",url:S}]},
-  {nama:"RAM DDR4 8GB SODIMM",kategori:"Memori",ikon:"🧠",label:"Terlaris",harga:"",deskripsi:"Multitasking lebih lega. Cek dulu jenis RAM laptop Anda.",toko:[{jenis:"shopee",url:S},{jenis:"tokopedia",url:T}]},
-  {nama:"Charger / Adaptor Laptop",kategori:"Daya",ikon:"🔌",label:"",harga:"",deskripsi:"Pengganti sesuai merk dan tipe laptop. Kirim tipe untuk dicek.",toko:[{jenis:"shopee",url:S},{jenis:"lazada",url:L}]},
-  {nama:"Baterai Laptop Pengganti",kategori:"Daya",ikon:"🔋",label:"",harga:"",deskripsi:"Untuk baterai yang sudah drop atau tidak bisa charging.",toko:[{jenis:"tokopedia",url:T}]},
-  {nama:"Keyboard Laptop Pengganti",kategori:"Sparepart",ikon:"⌨️",label:"",harga:"",deskripsi:"Tersedia untuk banyak tipe. Konfirmasi tipe sebelum membeli.",toko:[{jenis:"shopee",url:S}]},
-  {nama:"Thermal Paste",kategori:"Perawatan",ikon:"🧴",label:"",harga:"",deskripsi:"Untuk cleaning mandiri agar suhu CPU/GPU lebih adem.",toko:[{jenis:"shopee",url:S},{jenis:"tokopedia",url:T}]},
-  {nama:"Cooling Pad Laptop",kategori:"Aksesoris",ikon:"❄️",label:"",harga:"",deskripsi:"Bantu turunkan suhu saat dipakai lama atau main game.",toko:[{jenis:"shopee",url:S}]},
-  {nama:"Mouse Wireless",kategori:"Aksesoris",ikon:"🖱️",label:"",harga:"",deskripsi:"Praktis untuk kerja dan belajar, nyaman di tangan.",toko:[{jenis:"tiktok",url:"https://shop.tiktok.com/GANTI-LINK-AFILIASI-ANDA"},{jenis:"shopee",url:S}]},
-  {nama:"Tas / Sleeve Laptop",kategori:"Aksesoris",ikon:"🎒",label:"",harga:"",deskripsi:"Lindungi laptop dari benturan dan goresan.",toko:[{jenis:"lazada",url:L}]}
-];
-var NT={shopee:"Shopee",tokopedia:"Tokopedia",lazada:"Lazada",tiktok:"TikTok Shop",lain:"Lihat Produk"};
+var S_NVME="https://s.shopee.co.id/gRYj6cnnH",S_SATA="https://s.shopee.co.id/9KjWyg98y5";
 
+function IMG(f,a,e){return '<img class="ik" src="foto/'+f+'" alt="'+a+'" onerror="this.replaceWith(document.createTextNode(\''+e+'\'))">';}
+var IK_NVME=IMG("nvme.png","SSD NVMe","⚡");
+var IK_SATA=IMG("ssd sata.png","SSD SATA","💾");
+var IK_RAM=IMG("ram.png","RAM","🧠");
+var IK_CHARGER=IMG("charger.png","Charger","🔌");
+var IK_BATERAI=IMG("baterai.png","Baterai","🔋");
+var IK_KEYBOARD=IMG("keyboard.png","Keyboard","⌨️");
+var IK_PASTE=IMG("thermal-paste.png","Thermal Paste","🧴");
+var IK_COOLING=IMG("cooling-pad.png","Cooling Pad","❄️");
+var IK_MOUSE=IMG("mouse.png","Mouse","🖱️");
+var IK_TAS=IMG("tas.png","Tas Laptop","🎒");
+
+var PRODUK=[
+
+{nama:"SSD NVMe",kategori:"Penyimpanan",ikon:IK_NVME,label:"Pilihan Teknisi",harga:"",deskripsi:"Bikin laptop lama jauh lebih ngebut. Pastikan slot mendukung NVMe.",toko:[{jenis:"shopee",url:S_NVME},{jenis:"lazada",url:L},{jenis:"tiktok",url:"https://shop.tiktok.com/GANTI-LINK-AFILIASI-ANDA"},{jenis:"tokopedia",url:T}]},
+  
+{nama:"SSD SATA 2,5 inci ",kategori:"Penyimpanan",ikon:IK_SATA,label:"",harga:"",deskripsi:"Upgrade hemat untuk laptop yang masih memakai hardisk.",toko:[{jenis:"shopee",url:S_SATA},{jenis:"lazada",url:L},{jenis:"tiktok",url:"https://shop.tiktok.com/GANTI-LINK-AFILIASI-ANDA"},{jenis:"tokopedia",url:T}]},
+  
+{nama:"RAM DDR3/DDR4/DDR5 LDIMM/SODIMM",kategori:"Memori",ikon:IK_RAM,label:"Terlaris",harga:"",deskripsi:"Multitasking lebih lega. Cek dulu jenis RAM laptop Anda.",toko:[{jenis:"shopee",url:S},{jenis:"tokopedia",url:T}]},
+ 
+{nama:"Charger / Adaptor Laptop",kategori:"Daya",ikon:IK_CHARGER,label:"",harga:"",deskripsi:"Pengganti sesuai merk dan tipe laptop. Kirim tipe untuk dicek.",toko:[{jenis:"shopee",url:S},{jenis:"lazada",url:L}]},
+  
+{nama:"Baterai Laptop Pengganti",kategori:"Daya",ikon:IK_BATERAI,label:"",harga:"",deskripsi:"Untuk baterai yang sudah drop atau tidak bisa charging.",toko:[{jenis:"tokopedia",url:T}]},
+  
+{nama:"Keyboard Laptop Pengganti",kategori:"Sparepart",ikon:IK_KEYBOARD,label:"",harga:"",deskripsi:"Tersedia untuk banyak tipe. Konfirmasi tipe sebelum membeli.",toko:[{jenis:"shopee",url:S}]},
+  
+{nama:"Thermal Paste",kategori:"Perawatan",ikon:IK_PASTE,label:"",harga:"",deskripsi:"Untuk cleaning mandiri agar suhu CPU/GPU lebih adem.",toko:[{jenis:"shopee",url:S},{jenis:"tokopedia",url:T}]},
+  
+{nama:"Cooling Pad Laptop",kategori:"Aksesoris",ikon:IK_COOLING,label:"",harga:"",deskripsi:"Bantu turunkan suhu saat dipakai lama atau main game.",toko:[{jenis:"shopee",url:S}]},
+  
+{nama:"Mouse Wireless",kategori:"Aksesoris",ikon:IK_MOUSE,label:"",harga:"",deskripsi:"Praktis untuk kerja dan belajar, nyaman di tangan.",toko:[{jenis:"tiktok",url:"https://shop.tiktok.com/GANTI-LINK-AFILIASI-ANDA"},{jenis:"shopee",url:S}]},
+  {nama:"Tas / Sleeve Laptop",kategori:"Aksesoris",ikon:IK_TAS,label:"",harga:"",deskripsi:"Lindungi laptop dari benturan dan goresan.",toko:[{jenis:"lazada",url:L}]}
+];
+
+var NT={shopee:"Shopee",tokopedia:"Tokopedia",lazada:"Lazada",tiktok:"TikTok Shop",lain:"Lihat Produk"};
 /* ============================================================
    FOTO PEKERJAAN (tab Galeri Foto)
    1. Buat folder "foto" di samping file index.html, lalu unggah foto Anda
@@ -457,7 +481,7 @@ var FOTO=[
   {src:"foto/ssd 1.jpeg",judul:"Upgrade SSD & RAM",kat:"Upgrade"},
   {src:"foto/keyboard 1.jpeg",judul:"Ganti Keyboard",kat:"Keyboard"},
   {src:"foto/batre 1.jpeg",judul:"Ganti Baterai",kat:"Baterai"},
-  {src:"foto/Engsel 1.jpeg",judul:"Perbaikan Engsel Laptop",kat:"Perbaikan Engsel"},
+  {src:"foto/engsel 1.jpeg",judul:"Perbaikan Engsel Laptop",kat:"Perbaikan Engsel"},
   {src:"foto/flexible 2.jpeg",judul:"Pergantian Flexible LCD",kat:"Repair"},
   {src:"foto/flexible 1.jpeg",judul:"Pergantian Flexible LCD",kat:"Repair"}
 ];
@@ -525,7 +549,7 @@ var FOTO=[
     var list=PRODUK.filter(function(p){return(aktif==="Semua"||p.kategori===aktif)&&(!kw||(p.nama+" "+p.kategori+" "+p.deskripsi).toLowerCase().indexOf(kw)>-1)});
     $("grid").innerHTML=list.map(function(p,i){
       var sh=p.toko.map(function(t){var j=NT[t.jenis]?t.jenis:"lain";return '<a class="shop '+j+'" href="'+esc(t.url)+'" target="_blank" rel="sponsored nofollow noopener">'+esc(NT[j])+"</a>"}).join("");
-      return '<article class="card" style="animation-delay:'+(i*40)+'ms"><div class="tile">'+(p.label?'<span class="lb">'+esc(p.label)+"</span>":"")+esc(p.ikon||"🛒")+'</div><div class="cat">'+esc(p.kategori)+"</div><h3>"+esc(p.nama)+"</h3><p>"+esc(p.deskripsi)+'</p><div class="pr">'+(p.harga?esc(p.harga):"<small>Cek harga terbaru di toko</small>")+'</div><div class="shops">'+sh+"</div></article>";
+      return '<article class="card" style="animation-delay:'+(i*40)+'ms"><div class="tile">'+(p.label?'<span class="lb">'+(p.label)+"</span>":"")+(p.ikon||"🛒")+'</div><div class="cat">'+esc(p.kategori)+"</div><h3>"+esc(p.nama)+"</h3><p>"+esc(p.deskripsi)+'</p><div class="pr">'+(p.harga?esc(p.harga):"<small>Cek harga terbaru di toko</small>")+'</div><div class="shops">'+sh+"</div></article>";
     }).join("");
     $("cnt").textContent=list.length+" produk";
     $("empty").style.display=list.length?"none":"block";
