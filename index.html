@@ -276,8 +276,8 @@ footer{margin-top:92px;border-top:1px solid var(--line);padding:28px 0 100px;fon
     </table></div>
   </div>
   <div class="ticket rv">
-    <div><h3>Promo bulan ini: diskon 10%</h3><p>Untuk layanan instal ulang. Sebutkan kode saat chat.</p><span class="code">SR10</span></div>
-    <a class="btn" href="https://wa.me/6282299262564?text=Halo%2C%20saya%20mau%20klaim%20promo%20SR10.">Klaim via WA →</a>
+    <div><h3>Promo bulan ini: diskon Lagi Kosong Ni!!!</h3><p>Untuk layanan instal ulang.</p><span class="code">SR0</span></div>
+    <a class="btn" href="https://wa.me/6282299262564?text=Halo%2C%20saya%20mau%20klaim%20promo%20SR0.">Klaim via WA →</a>
   </div>
 </div></section>
 
@@ -451,14 +451,15 @@ var NT={shopee:"Shopee",tokopedia:"Tokopedia",lazada:"Lazada",tiktok:"TikTok Sho
    Foto yang gagal dimuat otomatis dilewati saat diperbesar.
    ============================================================ */
 var FOTO=[
-  {src:"foto/kerja-1.jpg",judul:"Ganti LCD",kat:"Ganti LCD"},
-  {src:"foto/kerja-2.jpg",judul:"Cleaning & Thermal Paste",kat:"Cleaning"},
+  {src:"foto/lcd 1.jpeg",judul:"Ganti LCD",kat:"Ganti LCD"},
+  {src:"foto/Cleaning 1.jpeg",judul:"Cleaning & Thermal Paste",kat:"Cleaning"},
   {src:"foto/kerja-3.jpg",judul:"Instal Ulang OS",kat:"Instal Ulang"},
-  {src:"foto/kerja-4.jpg",judul:"Upgrade SSD & RAM",kat:"Upgrade"},
-  {src:"foto/kerja-5.jpg",judul:"Ganti Keyboard",kat:"Keyboard"},
-  {src:"foto/kerja-6.jpg",judul:"Ganti Baterai",kat:"Baterai"},
-  {src:"foto/kerja-7.jpg",judul:"Ganti LCD",kat:"Ganti LCD"},
-  {src:"foto/kerja-8.jpg",judul:"Cleaning & Thermal Paste",kat:"Cleaning"}
+  {src:"foto/ssd 1.jpeg",judul:"Upgrade SSD & RAM",kat:"Upgrade"},
+  {src:"foto/keyboard 1.jpeg",judul:"Ganti Keyboard",kat:"Keyboard"},
+  {src:"foto/batre 1.jpeg",judul:"Ganti Baterai",kat:"Baterai"},
+  {src:"foto/engsel 1.jpeg",judul:"Perbaikan Engsel Laptop",kat:"Perbaikan Engsel"},
+  {src:"foto/flexible 2.jpeg",judul:"Pergantian Flexible LCD",kat:"Repair"},
+  {src:"foto/flexible 1.jpeg",judul:"Pergantian Flexible LCD",kat:"Repair"}
 ];
 
 (function(){
@@ -509,7 +510,7 @@ var FOTO=[
   if(window.matchMedia&&matchMedia("(prefers-reduced-motion:reduce)").matches){lines.forEach(function(l){html+=esc(l[0])+fmt(l[1])+"\n"});out.innerHTML=html}else tick();
 
   // ---------- estimator harga ----------
-  var D=[["Rp 50.000","Instal ulang + driver lengkap. Diskon 10% dengan kode SR10.","instal ulang Windows"],["Rp 55.000","Cleaning total + ganti thermal paste.","cleaning & thermal paste"],["Rp 110rb – 250rb","Tergantung tipe laptop. Konfirmasi via WA.","ganti keyboard"],["Rp 550rb – 950rb","Tergantung tipe laptop. Konfirmasi via WA.","ganti LCD"],["Konfirmasi","Kami diagnosa dulu, harga dikabari sebelum dikerjakan.","upgrade RAM/SSD atau perbaikan lain"]];
+  var D=[["Rp 50.000","Instal ulang + driver lengkap.","instal ulang Windows"],["Rp 55.000","Cleaning total + ganti thermal paste.","cleaning & thermal paste"],["Rp 110rb – 250rb","Tergantung tipe laptop. Konfirmasi via WA.","ganti keyboard"],["Rp 550rb – 950rb","Tergantung tipe laptop. Konfirmasi via WA.","ganti LCD"],["Konfirmasi","Kami diagnosa dulu, harga dikabari sebelum dikerjakan.","upgrade RAM/SSD atau perbaikan lain"]];
   function up(){var d=D[$("sel").value];$("pr").textContent=d[0];$("pn").textContent=d[1];$("pb").href="https://wa.me/6282299262564?text="+encodeURIComponent("Halo Sumber Rezeki, saya mau "+d[2]+".")}
   $("sel").addEventListener("change",up);up();
 
